@@ -1,0 +1,21 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Import{% endblock %}
+
+{% block content %}
+
+<form method="POST">
+
+  <textarea
+  name="essay"
+  placeholder="Write/Paste your essay here..."
+  aria-label="Essay"
+  rows="16"
+  minlength="10"
+  required
+  ></textarea>
+
+ <input type="submit" />
+
+</form>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "layouts/base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Founded Data</th>
+        <th>Founders</th>
+    </tr>
+    </thead>
+
+    <tbody>
+        {% for company in companies -%}
+            <tr>
+                <td>{{ company.name }}</td>
+                <td>{{ company.founded_date }} </td>
+                <td>
+                    <ul>
+                        {% for founder in company.founders -%}
+                        <li> {{ founder }} </li>
+                        {% endfor %}
+                    </ul>
+
+                </td>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
